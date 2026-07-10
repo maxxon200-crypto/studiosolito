@@ -17,7 +17,7 @@ export default function Footer() {
   const year = 2026; // Date.now() is unavailable at build; refreshed on releases.
 
   const links = [
-    { href: p.home, label: locale === "it" ? "Home" : "Home" },
+    { href: p.home, label: dict.nav.home },
     { href: p.work, label: dict.nav.work },
     { href: p.studio, label: dict.nav.studio },
     { href: p.contact, label: dict.nav.contact },
@@ -36,7 +36,7 @@ export default function Footer() {
         </div>
 
         <nav>
-          <p className="eyebrow text-paper/70">{dict.footer.nav}</p>
+          <p className="eyebrow text-paper/85">{dict.footer.nav}</p>
           <ul className="mt-5 space-y-2.5 text-[0.95rem]">
             {links.map((l) => (
               <li key={l.href}>
@@ -49,7 +49,7 @@ export default function Footer() {
         </nav>
 
         <div>
-          <p className="eyebrow text-paper/70">{dict.footer.contacts}</p>
+          <p className="eyebrow text-paper/85">{dict.footer.contacts}</p>
           <address className="mt-5 space-y-2.5 text-[0.95rem] not-italic text-paper/85">
             <p>
               {site.address.street}

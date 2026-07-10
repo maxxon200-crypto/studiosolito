@@ -44,7 +44,7 @@ export default function ContactForm({ dict }: { dict: Dict }) {
     <form onSubmit={onSubmit} className="space-y-7">
       <div className="grid gap-7 sm:grid-cols-2">
         <label className="block">
-          <span className="eyebrow text-ink/75">{f.name}</span>
+          <span className="eyebrow text-ink/85">{f.name}</span>
           <input
             type="text"
             name="name"
@@ -56,7 +56,7 @@ export default function ContactForm({ dict }: { dict: Dict }) {
           />
         </label>
         <label className="block">
-          <span className="eyebrow text-ink/75">{f.email}</span>
+          <span className="eyebrow text-ink/85">{f.email}</span>
           <input
             type="email"
             name="email"
@@ -70,7 +70,7 @@ export default function ContactForm({ dict }: { dict: Dict }) {
       </div>
 
       <label className="block">
-        <span className="eyebrow text-ink/75">{f.phone}</span>
+        <span className="eyebrow text-ink/85">{f.phone}</span>
         <input
           type="tel"
           name="phone"
@@ -82,7 +82,7 @@ export default function ContactForm({ dict }: { dict: Dict }) {
       </label>
 
       <label className="block">
-        <span className="eyebrow text-ink/75">{f.message}</span>
+        <span className="eyebrow text-ink/85">{f.message}</span>
         <textarea
           name="message"
           required

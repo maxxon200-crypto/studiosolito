@@ -44,16 +44,15 @@
   --text-stat--letter-spacing: -0.03em;
   --text-stat--font-weight: 500;
 
-  --text-eyebrow: 0.8125rem;
-  --text-eyebrow--line-height: 1.25;
-  --text-eyebrow--letter-spacing: 0.14em;
+  --text-eyebrow: 0.875rem;
+  --text-eyebrow--line-height: 1.3;
+  --text-eyebrow--letter-spacing: 0.12em;
   --text-eyebrow--font-weight: 600;
 
   /* Sharp corners everywhere — editorial, not app-like. */
   --radius-*: initial;
 
   --ease-out-soft: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  --ease-drift: cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
 :root {
@@ -144,7 +143,9 @@
     background-color: var(--color-accent);
   }
   .btn-ghost-ink {
-    border-color: var(--color-line);
+    /* stone (not line) so the outline clears the 3:1 non-text-contrast bar
+       on both paper and the bone hero */
+    border-color: var(--color-stone);
     color: var(--color-ink);
   }
   .btn-ghost-ink:hover {
@@ -192,21 +193,13 @@
 }
 
 /*
-  Motion. Two effects only:
+  Motion. Minimal and always safe:
   1. A slow fade+rise on sections entering the viewport (GSAP, see Reveal.tsx —
      baseline styles stay fully visible; JS animates FROM the hidden state so
      the site never launches blank without JS).
-  2. A slow hover zoom on project photography, CSS-only, pointer devices only.
+  2. A slow opacity reveal of project captions on hover (below).
+  (A hover zoom on real photography will return with the real photos.)
 */
-@media (hover: hover) and (prefers-reduced-motion: no-preference) {
-  .media-zoom img {
-    transition: transform 1.4s var(--ease-drift);
-  }
-  .media-zoom:hover img,
-  .media-zoom:focus-within img {
-    transform: scale(1.05);
-  }
-}
 
 /* Project captions: visible by default (touch, no-JS, reduced motion); on
    pointer devices they reveal on hover/focus. A pure opacity fade — the

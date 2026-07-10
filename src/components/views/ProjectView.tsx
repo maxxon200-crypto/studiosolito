@@ -28,33 +28,19 @@ export default function ProjectView({
 
   return (
     <main id="main">
-      {/* Hero image */}
+      {/* Hero image placeholder */}
       <section className="relative flex h-[86svh] min-h-[30rem] flex-col justify-end overflow-hidden">
         <div className="absolute inset-0 -z-10">
-          <Media
-            name={project.cover}
-            locale={locale}
-            sizes="100vw"
-            zoom={false}
-            preload
-            loading="eager"
-          />
+          <Media name={project.cover} locale={locale} size="lg" />
         </div>
-        <div
-          className="absolute inset-0 -z-10 bg-gradient-to-t from-ink/70 via-ink/10 to-ink/25"
-          aria-hidden
-        />
-        <div className="container-site pb-12 md:pb-16">
-          <Link
-            href={p.work}
-            className="link-line text-sm text-paper/80"
-          >
+        <div className="container-site relative pb-12 md:pb-16">
+          <Link href={p.work} className="link-line text-[0.95rem] text-ink/70">
             ← {pj.back}
           </Link>
-          <h1 className="mt-5 max-w-[18ch] text-display text-paper text-balance">
+          <h1 className="mt-5 max-w-[18ch] text-display text-ink text-balance">
             {project.title[locale]}
           </h1>
-          <p className="mt-4 text-lead text-paper/85">
+          <p className="mt-4 text-lead text-ink/80">
             {project.type[locale]} · {project.place} · {project.year}
           </p>
         </div>
@@ -79,14 +65,14 @@ export default function ProjectView({
           </Reveal>
 
           <Reveal delay={0.08} className="md:pt-2">
-            <p className="eyebrow text-ink/75">{pj.data}</p>
+            <p className="eyebrow text-ink/85">{pj.data}</p>
             <dl className="mt-6 divide-y divide-line border-y border-line">
               {dataRows.map((row) => (
                 <div
                   key={row.label}
                   className="flex items-baseline justify-between gap-6 py-4"
                 >
-                  <dt className="text-sm text-stone">{row.label}</dt>
+                  <dt className="text-[0.95rem] text-ink/70">{row.label}</dt>
                   <dd className="text-right font-medium">{row.value}</dd>
                 </div>
               ))}
@@ -114,15 +100,7 @@ export default function ProjectView({
                         : "relative aspect-[4/5] w-full"
                     }
                   >
-                    <Media
-                      name={key}
-                      locale={locale}
-                      sizes={
-                        wide
-                          ? "(min-width: 1680px) 1552px, 100vw"
-                          : "(max-width: 640px) 100vw, (min-width: 1680px) 760px, 50vw"
-                      }
-                    />
+                    <Media name={key} locale={locale} size={wide ? "md" : "sm"} />
                   </div>
                 </div>
               );
@@ -139,7 +117,7 @@ export default function ProjectView({
         >
           <div className="container-site flex items-center justify-between gap-6 py-12 md:py-16">
             <div>
-              <p className="eyebrow text-ink/75">{pj.next}</p>
+              <p className="eyebrow text-ink/85">{pj.next}</p>
               <p className="mt-3 text-title transition-colors group-hover:text-accent">
                 {next.title[locale]}
               </p>

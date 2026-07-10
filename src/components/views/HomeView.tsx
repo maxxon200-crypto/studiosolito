@@ -36,36 +36,22 @@ export default function HomeView({ locale }: { locale: Locale }) {
   return (
     <>
       <main id="main">
-      {/* ---- Hero: full-screen photo, title bottom-left, two buttons ---- */}
-      <section
-        className="relative flex h-[100svh] min-h-[34rem] flex-col justify-end overflow-hidden"
-      >
+      {/* ---- Hero: full-screen photo placeholder, title bottom-left, two buttons ---- */}
+      <section className="relative flex h-[100svh] min-h-[34rem] flex-col justify-end overflow-hidden">
         <div className="absolute inset-0 -z-10">
-          <Media
-            name="03"
-            locale={locale}
-            sizes="100vw"
-            zoom={false}
-            preload
-            loading="eager"
-          />
+          <Media name="03" locale={locale} label={dict.hero.photo} size="lg" />
         </div>
-        {/* legibility washes: darker at the base for the title, a touch at top for the nav */}
-        <div
-          className="absolute inset-0 -z-10 bg-gradient-to-t from-ink/85 via-ink/35 to-ink/25"
-          aria-hidden
-        />
 
-        <div className="container-site pb-14 md:pb-20">
-          <p className="eyebrow text-paper/80">{dict.hero.eyebrow}</p>
-          <h1 className="mt-5 max-w-[16ch] text-display text-paper text-balance">
+        <div className="container-site relative pb-14 md:pb-20">
+          <p className="eyebrow text-ink/85">{dict.hero.eyebrow}</p>
+          <h1 className="mt-5 max-w-[16ch] text-display text-ink text-balance">
             <HeadlineWithAccent title={dict.hero.title} accent={dict.hero.accent} />
           </h1>
           <div className="mt-9 flex flex-wrap items-center gap-4">
-            <Link href={p.work} className="btn btn-paper">
+            <Link href={p.work} className="btn btn-ink">
               {dict.hero.ctaWork}
             </Link>
-            <Link href={p.contact} className="btn btn-ghost-paper">
+            <Link href={p.contact} className="btn btn-ghost-ink">
               {dict.hero.ctaStart}
             </Link>
           </div>
@@ -108,9 +94,9 @@ export default function HomeView({ locale }: { locale: Locale }) {
             {dict.stats.map((s) => (
               <div key={s.label}>
                 <p className="text-stat">{s.value}</p>
-                {/* ink/70 (not stone) so the label clears AA contrast on the
+                {/* ink (not stone) so the label clears AA contrast on the
                     bone ground while staying muted */}
-                <p className="mt-3 max-w-[18ch] text-sm leading-snug text-ink/70">
+                <p className="mt-3 max-w-[18ch] text-[0.95rem] leading-snug text-ink/80">
                   {s.label}
                 </p>
               </div>
@@ -124,7 +110,7 @@ export default function HomeView({ locale }: { locale: Locale }) {
         <div className="container-site">
           <Reveal className="grid gap-10 md:grid-cols-[1fr_1.2fr] md:gap-16">
             <div>
-              <p className="eyebrow text-ink/75">{dict.services.eyebrow}</p>
+              <p className="eyebrow text-ink/85">{dict.services.eyebrow}</p>
               <h2 className="mt-6 max-w-xl text-title text-balance">
                 {dict.services.title}
               </h2>
@@ -139,7 +125,7 @@ export default function HomeView({ locale }: { locale: Locale }) {
                 className="flex flex-col bg-paper p-8 md:p-10"
               >
                 <h3 className="text-heading">{item.name}</h3>
-                <p className="mt-4 text-[1.05rem] leading-relaxed text-stone">
+                <p className="mt-4 text-[1.1rem] leading-relaxed text-stone">
                   {item.text}
                 </p>
               </Reveal>

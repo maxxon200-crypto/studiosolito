@@ -51,6 +51,7 @@ export const t = {
   it: {
     skipToContent: "Vai al contenuto",
     nav: {
+      home: "Home",
       work: "Progetti",
       studio: "Studio",
       contact: "Contatti",
@@ -60,6 +61,7 @@ export const t = {
       eyebrow: "Studio di architettura — Sesto San Giovanni, Milano",
       title: "Diamo forma agli spazi in cui vivi.",
       accent: "spazi",
+      photo: "Foto progetto",
       ctaWork: "Progetti",
       ctaStart: "Inizia un progetto",
     },
@@ -115,6 +117,7 @@ export const t = {
     },
     studio: {
       title: "Uno studio, un interlocutore.",
+      photo: "Ritratto studio",
       intro:
         "Studio di Architettura Solito progetta e ristruttura case private a Sesto San Giovanni, Milano e dintorni. Crediamo che una casa ben progettata non si veda prima di tutto: si viva. Per questo ogni progetto parte dalle persone — dalle abitudini, dai gesti di ogni giorno — e arriva a uno spazio contemporaneo, pulito e caldo, che assomiglia a chi lo abita.",
       valueTitle: "Il valore di un unico interlocutore",
@@ -186,6 +189,7 @@ export const t = {
   en: {
     skipToContent: "Skip to content",
     nav: {
+      home: "Home",
       work: "Work",
       studio: "Studio",
       contact: "Contact",
@@ -195,6 +199,7 @@ export const t = {
       eyebrow: "Architecture studio — Sesto San Giovanni, Milan",
       title: "Shaping the spaces you live in.",
       accent: "spaces",
+      photo: "Project photo",
       ctaWork: "Work",
       ctaStart: "Start a project",
     },
@@ -250,6 +255,7 @@ export const t = {
     },
     studio: {
       title: "One studio, one point of contact.",
+      photo: "Studio portrait",
       intro:
         "Studio di Architettura Solito designs and renovates private homes in Sesto San Giovanni, Milan and the surrounding area. We believe a well-designed home is not something you notice first — it is something you live. Every project starts from people, from everyday habits and gestures, and arrives at a contemporary space, clean and warm, that resembles the people who inhabit it.",
       valueTitle: "The value of a single point of contact",

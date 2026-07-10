@@ -17,7 +17,7 @@ export default function ContactView({ locale }: { locale: Locale }) {
           {/* Details */}
           <Reveal className="space-y-10">
             <div>
-              <p className="eyebrow text-ink/75">{c.whereTitle}</p>
+              <p className="eyebrow text-ink/85">{c.whereTitle}</p>
               <address className="mt-4 text-lead not-italic leading-relaxed">
                 {site.address.street}
                 <br />
@@ -35,7 +35,7 @@ export default function ContactView({ locale }: { locale: Locale }) {
 
             <div className="grid grid-cols-2 gap-8 border-t border-line pt-8">
               <div>
-                <p className="eyebrow text-ink/75">{c.phoneTitle}</p>
+                <p className="eyebrow text-ink/85">{c.phoneTitle}</p>
                 <a
                   href={site.phone.href}
                   className="link-line mt-3 inline-block text-[1.05rem]"
@@ -44,7 +44,7 @@ export default function ContactView({ locale }: { locale: Locale }) {
                 </a>
               </div>
               <div>
-                <p className="eyebrow text-ink/75">{c.emailTitle}</p>
+                <p className="eyebrow text-ink/85">{c.emailTitle}</p>
                 <a
                   href={`mailto:${site.email}`}
                   className="link-line mt-3 inline-block break-all text-[1.05rem]"
