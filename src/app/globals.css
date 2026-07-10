@@ -1,0 +1,237 @@
+@import "tailwindcss";
+
+/*
+  Studio Solito — design tokens.
+  The palette is exactly six values; the default Tailwind palette is
+  disabled so nothing outside this system can be used by mistake.
+  60% paper · 30% bone · 10% accent, ink for text, stone for labels,
+  line for hairlines. No pure black, no pure white.
+*/
+@theme {
+  --color-*: initial;
+  --color-paper: #F5F4F2;
+  --color-bone: #EAE8E3;
+  --color-ink: #1A1A18;
+  --color-stone: #6E6A63;
+  --color-line: #D8D5CF;
+  --color-accent: #7C6A58;
+
+  /* One typeface: Space Grotesk (variable, self-hosted). No serif. */
+  --font-sans: var(--font-grotesk), ui-sans-serif, system-ui, -apple-system,
+    "Helvetica Neue", Arial, sans-serif;
+
+  --text-display: clamp(2.5rem, 8vw, 7.5rem);
+  --text-display--line-height: 0.95;
+  --text-display--letter-spacing: -0.035em;
+  --text-display--font-weight: 500;
+
+  --text-title: clamp(2.125rem, 5vw, 4.25rem);
+  --text-title--line-height: 1.02;
+  --text-title--letter-spacing: -0.03em;
+  --text-title--font-weight: 500;
+
+  --text-heading: clamp(1.375rem, 2.4vw, 2rem);
+  --text-heading--line-height: 1.15;
+  --text-heading--letter-spacing: -0.02em;
+  --text-heading--font-weight: 500;
+
+  --text-lead: clamp(1.125rem, 1.7vw, 1.5rem);
+  --text-lead--line-height: 1.45;
+  --text-lead--letter-spacing: -0.01em;
+
+  --text-stat: clamp(2.75rem, 5.5vw, 5rem);
+  --text-stat--line-height: 1;
+  --text-stat--letter-spacing: -0.03em;
+  --text-stat--font-weight: 500;
+
+  --text-eyebrow: 0.6875rem;
+  --text-eyebrow--line-height: 1.2;
+  --text-eyebrow--letter-spacing: 0.16em;
+  --text-eyebrow--font-weight: 500;
+
+  /* Sharp corners everywhere — editorial, not app-like. */
+  --radius-*: initial;
+
+  --ease-out-soft: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-drift: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+:root {
+  color-scheme: light;
+  --nav-h: 4.5rem;
+}
+@media (min-width: 768px) {
+  :root {
+    --nav-h: 5.25rem;
+  }
+}
+
+@layer base {
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: var(--color-accent);
+    color: var(--color-paper);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  .container-site {
+    width: 100%;
+    max-width: 1680px;
+    margin-inline: auto;
+    padding-inline: clamp(1.25rem, 4vw, 4rem);
+  }
+
+  .eyebrow {
+    font-size: var(--text-eyebrow);
+    line-height: var(--text-eyebrow--line-height);
+    letter-spacing: var(--text-eyebrow--letter-spacing);
+    font-weight: var(--text-eyebrow--font-weight);
+    text-transform: uppercase;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 0.9rem 1.75rem;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    border: 1px solid transparent;
+    transition:
+      background-color 0.35s var(--ease-out-soft),
+      border-color 0.35s var(--ease-out-soft),
+      color 0.35s var(--ease-out-soft);
+  }
+
+  /* On photography / dark ground */
+  .btn-paper {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+  }
+  .btn-paper:hover {
+    background-color: var(--color-bone);
+  }
+  .btn-ghost-paper {
+    border-color: color-mix(in srgb, var(--color-paper) 60%, transparent);
+    color: var(--color-paper);
+  }
+  .btn-ghost-paper:hover {
+    border-color: var(--color-paper);
+    background-color: color-mix(in srgb, var(--color-paper) 12%, transparent);
+  }
+
+  /* On paper ground */
+  .btn-ink {
+    background-color: var(--color-ink);
+    color: var(--color-paper);
+  }
+  .btn-ink:hover {
+    background-color: var(--color-accent);
+  }
+  .btn-ghost-ink {
+    border-color: var(--color-line);
+    color: var(--color-ink);
+  }
+  .btn-ghost-ink:hover {
+    border-color: var(--color-ink);
+  }
+
+  .skip-link {
+    position: fixed;
+    top: 0.75rem;
+    left: 0.75rem;
+    z-index: 100;
+    transform: translateY(-150%);
+    background-color: var(--color-ink);
+    color: var(--color-paper);
+    padding: 0.6rem 1rem;
+    font-size: 0.875rem;
+    transition: transform 0.2s var(--ease-out-soft);
+  }
+  .skip-link:focus {
+    transform: translateY(0);
+  }
+
+  /* Text link with sliding hairline underline */
+  .link-line {
+    position: relative;
+  }
+  .link-line::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.2em;
+    width: 100%;
+    height: 1px;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s var(--ease-out-soft);
+  }
+  .link-line:hover::after,
+  .link-line:focus-visible::after,
+  .link-line[aria-current="page"]::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+/*
+  Motion. Two effects only:
+  1. A slow fade+rise on sections entering the viewport (GSAP, see Reveal.tsx —
+     baseline styles stay fully visible; JS animates FROM the hidden state so
+     the site never launches blank without JS).
+  2. A slow hover zoom on project photography, CSS-only, pointer devices only.
+*/
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .media-zoom img {
+    transition: transform 1.4s var(--ease-drift);
+  }
+  .media-zoom:hover img,
+  .media-zoom:focus-within img {
+    transform: scale(1.05);
+  }
+}
+
+/* Project captions: visible by default (touch, no-JS, reduced motion); on
+   pointer devices they reveal on hover/focus. A pure opacity fade — the
+   hover-reveal itself, with no extra movement. */
+.project-caption {
+  opacity: 1;
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .project-caption {
+    opacity: 0;
+    transition: opacity 0.45s var(--ease-out-soft);
+  }
+  .group:hover .project-caption,
+  .group:focus-within .project-caption {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
