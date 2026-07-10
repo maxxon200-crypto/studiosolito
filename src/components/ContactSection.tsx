@@ -20,7 +20,7 @@ export default function ContactSection({
       <div className="container-site py-24 md:py-36">
         <div className="grid gap-12 md:grid-cols-[1.5fr_1fr] md:gap-20">
           <Reveal>
-            <p className="eyebrow text-paper/45">{dict.cta.eyebrow}</p>
+            <p className="eyebrow text-paper/70">{dict.cta.eyebrow}</p>
             <h2 className="mt-6 max-w-3xl text-title text-balance">
               {dict.cta.title}
             </h2>
@@ -43,7 +43,7 @@ export default function ContactSection({
           <Reveal delay={0.1} className="md:justify-self-end">
             <div className="space-y-8 md:text-right">
               <div>
-                <p className="eyebrow text-paper/45">{dict.contact.whereTitle}</p>
+                <p className="eyebrow text-paper/70">{dict.contact.whereTitle}</p>
                 <address className="mt-3 not-italic text-paper/85">
                   {site.address.street}
                   <br />
@@ -51,7 +51,7 @@ export default function ContactSection({
                 </address>
               </div>
               <div>
-                <p className="eyebrow text-paper/45">{dict.contact.phoneTitle}</p>
+                <p className="eyebrow text-paper/70">{dict.contact.phoneTitle}</p>
                 <a
                   href={site.phone.href}
                   className="link-line mt-3 inline-block text-paper/85"
@@ -60,7 +60,7 @@ export default function ContactSection({
                 </a>
               </div>
               <div>
-                <p className="eyebrow text-paper/45">{dict.contact.emailTitle}</p>
+                <p className="eyebrow text-paper/70">{dict.contact.emailTitle}</p>
                 <a
                   href={`mailto:${site.email}`}
                   className="link-line mt-3 inline-block text-paper/85"

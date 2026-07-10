@@ -36,15 +36,15 @@ export default function ContactForm({ dict }: { dict: Dict }) {
   };
 
   const field =
-    "w-full border-b border-ink/20 bg-transparent py-3 text-ink " +
-    "placeholder:text-stone/70 focus:border-ink focus:outline-none " +
+    "w-full border-b border-ink/25 bg-transparent py-3 text-[1.05rem] text-ink " +
+    "placeholder:text-stone focus:border-ink focus:outline-none " +
     "transition-colors";
 
   return (
     <form onSubmit={onSubmit} className="space-y-7">
       <div className="grid gap-7 sm:grid-cols-2">
         <label className="block">
-          <span className="eyebrow text-stone">{f.name}</span>
+          <span className="eyebrow text-ink/75">{f.name}</span>
           <input
             type="text"
             name="name"
@@ -56,7 +56,7 @@ export default function ContactForm({ dict }: { dict: Dict }) {
           />
         </label>
         <label className="block">
-          <span className="eyebrow text-stone">{f.email}</span>
+          <span className="eyebrow text-ink/75">{f.email}</span>
           <input
             type="email"
             name="email"
@@ -70,7 +70,7 @@ export default function ContactForm({ dict }: { dict: Dict }) {
       </div>
 
       <label className="block">
-        <span className="eyebrow text-stone">{f.phone}</span>
+        <span className="eyebrow text-ink/75">{f.phone}</span>
         <input
           type="tel"
           name="phone"
@@ -82,7 +82,7 @@ export default function ContactForm({ dict }: { dict: Dict }) {
       </label>
 
       <label className="block">
-        <span className="eyebrow text-stone">{f.message}</span>
+        <span className="eyebrow text-ink/75">{f.message}</span>
         <textarea
           name="message"
           required

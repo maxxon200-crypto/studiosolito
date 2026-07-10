@@ -70,7 +70,7 @@ export default function ProjectView({
                 className={
                   i === 0
                     ? "text-lead leading-relaxed text-balance"
-                    : "text-[1.05rem] leading-relaxed text-stone"
+                    : "text-[1.1rem] leading-relaxed text-stone"
                 }
               >
                 {para}
@@ -79,7 +79,7 @@ export default function ProjectView({
           </Reveal>
 
           <Reveal delay={0.08} className="md:pt-2">
-            <p className="eyebrow text-stone">{pj.data}</p>
+            <p className="eyebrow text-ink/75">{pj.data}</p>
             <dl className="mt-6 divide-y divide-line border-y border-line">
               {dataRows.map((row) => (
                 <div
@@ -139,7 +139,7 @@ export default function ProjectView({
         >
           <div className="container-site flex items-center justify-between gap-6 py-12 md:py-16">
             <div>
-              <p className="eyebrow text-stone">{pj.next}</p>
+              <p className="eyebrow text-ink/75">{pj.next}</p>
               <p className="mt-3 text-title transition-colors group-hover:text-accent">
                 {next.title[locale]}
               </p>

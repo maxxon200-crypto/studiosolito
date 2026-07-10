@@ -6,6 +6,29 @@ import ContactSection from "@/components/ContactSection";
 import { paths, t, type Locale } from "@/lib/i18n";
 import { projects } from "@/lib/projects";
 
+/*
+  Render the hero headline with a single word coloured in --accent (the one
+  editorial accent). Plain text otherwise — no effects, split on the word so
+  the copy stays intact.
+*/
+function HeadlineWithAccent({
+  title,
+  accent,
+}: {
+  title: string;
+  accent: string;
+}) {
+  const i = title.indexOf(accent);
+  if (i < 0) return <>{title}</>;
+  return (
+    <>
+      {title.slice(0, i)}
+      <span className="text-accent">{accent}</span>
+      {title.slice(i + accent.length)}
+    </>
+  );
+}
+
 export default function HomeView({ locale }: { locale: Locale }) {
   const dict = t[locale];
   const p = paths[locale];
@@ -29,14 +52,14 @@ export default function HomeView({ locale }: { locale: Locale }) {
         </div>
         {/* legibility washes: darker at the base for the title, a touch at top for the nav */}
         <div
-          className="absolute inset-0 -z-10 bg-gradient-to-t from-ink/70 via-ink/15 to-ink/25"
+          className="absolute inset-0 -z-10 bg-gradient-to-t from-ink/85 via-ink/35 to-ink/25"
           aria-hidden
         />
 
         <div className="container-site pb-14 md:pb-20">
           <p className="eyebrow text-paper/80">{dict.hero.eyebrow}</p>
           <h1 className="mt-5 max-w-[16ch] text-display text-paper text-balance">
-            {dict.hero.title}
+            <HeadlineWithAccent title={dict.hero.title} accent={dict.hero.accent} />
           </h1>
           <div className="mt-9 flex flex-wrap items-center gap-4">
             <Link href={p.work} className="btn btn-paper">
@@ -101,7 +124,7 @@ export default function HomeView({ locale }: { locale: Locale }) {
         <div className="container-site">
           <Reveal className="grid gap-10 md:grid-cols-[1fr_1.2fr] md:gap-16">
             <div>
-              <p className="eyebrow text-stone">{dict.services.eyebrow}</p>
+              <p className="eyebrow text-ink/75">{dict.services.eyebrow}</p>
               <h2 className="mt-6 max-w-xl text-title text-balance">
                 {dict.services.title}
               </h2>
@@ -116,7 +139,7 @@ export default function HomeView({ locale }: { locale: Locale }) {
                 className="flex flex-col bg-paper p-8 md:p-10"
               >
                 <h3 className="text-heading">{item.name}</h3>
-                <p className="mt-4 text-[0.975rem] leading-relaxed text-stone">
+                <p className="mt-4 text-[1.05rem] leading-relaxed text-stone">
                   {item.text}
                 </p>
               </Reveal>

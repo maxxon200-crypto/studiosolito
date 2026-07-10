@@ -59,6 +59,7 @@ export const t = {
     hero: {
       eyebrow: "Studio di architettura — Sesto San Giovanni, Milano",
       title: "Diamo forma agli spazi in cui vivi.",
+      accent: "spazi",
       ctaWork: "Progetti",
       ctaStart: "Inizia un progetto",
     },
@@ -193,6 +194,7 @@ export const t = {
     hero: {
       eyebrow: "Architecture studio — Sesto San Giovanni, Milan",
       title: "Shaping the spaces you live in.",
+      accent: "spaces",
       ctaWork: "Work",
       ctaStart: "Start a project",
     },

@@ -35,7 +35,7 @@ export default function StudioView({ locale }: { locale: Locale }) {
         <section className="py-24 md:py-36">
           <div className="container-site grid gap-12 md:grid-cols-[1fr_1.3fr] md:gap-20">
             <Reveal>
-              <p className="eyebrow text-stone">{s.approachEyebrow}</p>
+              <p className="eyebrow text-ink/75">{s.approachEyebrow}</p>
               <h2 className="mt-6 text-title text-balance">{s.valueTitle}</h2>
             </Reveal>
             <Reveal delay={0.08} className="self-end">
@@ -57,11 +57,11 @@ export default function StudioView({ locale }: { locale: Locale }) {
                   delay={i * 0.08}
                   className="flex flex-col bg-paper p-8 md:p-10"
                 >
-                  <span className="text-sm tabular-nums text-accent">
+                  <span className="text-[0.95rem] font-medium tabular-nums text-accent">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <h3 className="mt-6 text-heading">{step.name}</h3>
-                  <p className="mt-4 text-[0.975rem] leading-relaxed text-stone">
+                  <p className="mt-4 text-[1.05rem] leading-relaxed text-stone">
                     {step.text}
                   </p>
                 </Reveal>

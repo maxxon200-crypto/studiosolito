@@ -44,10 +44,10 @@
   --text-stat--letter-spacing: -0.03em;
   --text-stat--font-weight: 500;
 
-  --text-eyebrow: 0.6875rem;
-  --text-eyebrow--line-height: 1.2;
-  --text-eyebrow--letter-spacing: 0.16em;
-  --text-eyebrow--font-weight: 500;
+  --text-eyebrow: 0.8125rem;
+  --text-eyebrow--line-height: 1.25;
+  --text-eyebrow--letter-spacing: 0.14em;
+  --text-eyebrow--font-weight: 600;
 
   /* Sharp corners everywhere — editorial, not app-like. */
   --radius-*: initial;

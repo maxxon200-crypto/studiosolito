@@ -30,13 +30,13 @@ export default function Footer() {
           <p className="text-[1.15rem] font-medium tracking-[-0.03em]">
             {site.name}
           </p>
-          <p className="mt-4 text-sm leading-relaxed text-paper/60">
+          <p className="mt-4 text-[0.95rem] leading-relaxed text-paper/70">
             {dict.footer.description}
           </p>
         </div>
 
         <nav>
-          <p className="eyebrow text-paper/40">{dict.footer.nav}</p>
+          <p className="eyebrow text-paper/70">{dict.footer.nav}</p>
           <ul className="mt-5 space-y-2.5 text-[0.95rem]">
             {links.map((l) => (
               <li key={l.href}>
@@ -49,7 +49,7 @@ export default function Footer() {
         </nav>
 
         <div>
-          <p className="eyebrow text-paper/40">{dict.footer.contacts}</p>
+          <p className="eyebrow text-paper/70">{dict.footer.contacts}</p>
           <address className="mt-5 space-y-2.5 text-[0.95rem] not-italic text-paper/85">
             <p>
               {site.address.street}
